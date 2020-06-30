@@ -18,10 +18,12 @@ This package adds Microsoft SQL Server support to Ocelot configuration.
 Install Ocelot.Provider.MySql and it's dependencies using NuGet. 
 
 `Install-Package Ocelot.Provider.MySql`
+`Install-Package Microsoft.EntityFrameworkCore.Relational`
 
 Or via the .NET Core CLI:
 
 `dotnet add package Ocelot.Provider.MySql`
+`dotnet add package Microsoft.EntityFrameworkCore.Relational`
 
 All versions can be found [here](https://www.nuget.org/packages/Ocelot.Provider.MySql/)
 
