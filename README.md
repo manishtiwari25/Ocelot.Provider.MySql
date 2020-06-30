@@ -33,3 +33,5 @@ All versions can be found [here](https://www.nuget.org/packages/Ocelot.Provider.
 
 # Thanks
 Get some ideas from [Ocelot.Provider.Consul](https://github.com/ThreeMammals/Ocelot.Provider.Consul)
+
+## Special Thanks To @niyw for (https://github.com/niyw/Ocelot.Provider.SqlServer)
