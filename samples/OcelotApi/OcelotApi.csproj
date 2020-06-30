@@ -18,7 +18,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Ocelot.Administration" Version="16.0.1" />
-    <PackageReference Include="Ocelot.Provider.MySql" Version="0.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Ocelot.Provider.MySql\Ocelot.Provider.MySql.csproj" />
   </ItemGroup>
 
 

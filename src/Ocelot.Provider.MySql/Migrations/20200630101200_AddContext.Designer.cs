@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Ocelot.Provider.MySql;
 
 namespace Ocelot.Provider.MySql.Migrations
 {
     [DbContext(typeof(OcelotConfigDbContext))]
-    partial class OcelotConfigDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200630101200_AddContext")]
+    partial class AddContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Ocelot.Administration;
 using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 using Ocelot.Provider.MySql;
 
 namespace OcelotApi
@@ -33,8 +34,9 @@ namespace OcelotApi
             services.AddDbContext<OcelotConfigDbContext>(x=>x.UseMySQL(connectionString));
             services
               .AddOcelot(Configuration)
-              .AddConfigStoredInMySql()
+              .AddConfigStoredInMySql(x=>x.ConnectionString = connectionString)
               .AddAdministration("/administration", "secret");
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +48,11 @@ namespace OcelotApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseRouting();
             app.UseAuthorization();
+            app.UseEndpoints(x=>x.MapControllers());
+            app.UseOcelot().Wait();
         }
     }
 }

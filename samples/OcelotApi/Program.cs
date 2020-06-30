@@ -29,6 +29,7 @@ namespace OcelotApi
                         })
                         .ConfigureLogging(logging =>
                         {
+                            logging.AddConsole();
                             logging.ClearProviders();
                             logging.SetMinimumLevel(LogLevel.Trace);
                         })
