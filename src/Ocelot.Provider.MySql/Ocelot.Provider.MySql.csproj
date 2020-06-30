@@ -15,7 +15,7 @@
     <PackageProjectUrl>https://github.com/manishtiwari25/Ocelot.Provider.MySql</PackageProjectUrl>
     <RepositoryUrl>https://github.com/manishtiwari25/Ocelot.Provider.MySql</RepositoryUrl>
     <PackageReleaseNotes>
-      please refer https://github.com/manishtiwari25/Ocelot.Provider.MySql
+      please refer https://github.com/manishtiwari25/Ocelot.Provider.MySql/blob/master/ReleaseNotes.md
     </PackageReleaseNotes>
   </PropertyGroup>
 
