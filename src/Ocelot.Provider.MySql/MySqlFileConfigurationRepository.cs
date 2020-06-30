@@ -75,7 +75,7 @@
             }
             catch (Exception ex)
             {
-                return new ErrorResponse(new SetConfigInMySqlError($"Failed to set FileConfiguration in sql server, error message:{ex.Message}", (int)HttpStatusCode.InternalServerError));
+                return new ErrorResponse(new SetConfigInMySqlError($"Failed to set FileConfiguration in sql server, error message:{ex.Message}", (int)HttpStatusCode.NotFound));
             }
         }
     }

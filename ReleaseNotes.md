@@ -1,6 +1,9 @@
 [English](README.md)  | Release Notes
 # Package Update
-## v1.0.0
+## v1.2.0
+- Fixed Issues
+
+## v1.1.0
 - Fixed Issues
 
 ## v1.0.0

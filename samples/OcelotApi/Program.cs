@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
@@ -19,6 +20,8 @@ namespace OcelotApi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                        .UseKestrel()
+                        .UseContentRoot(Directory.GetCurrentDirectory())
                         .ConfigureAppConfiguration((hostingContext, config) =>
                         {
                             config
@@ -33,6 +36,7 @@ namespace OcelotApi
                             logging.ClearProviders();
                             logging.SetMinimumLevel(LogLevel.Trace);
                         })
-                .UseStartup<Startup>();
+                        .UseStartup<Startup>()
+                        .UseIISIntegration();
     }
 }

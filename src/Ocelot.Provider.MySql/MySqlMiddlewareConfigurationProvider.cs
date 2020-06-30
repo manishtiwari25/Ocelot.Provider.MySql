@@ -7,6 +7,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Options;
     using Middleware;
+    using Ocelot.Configuration.Setter;
     using Responses;
     using System;
     using System.Linq;

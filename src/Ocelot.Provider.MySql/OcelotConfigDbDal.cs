@@ -18,6 +18,7 @@ namespace Ocelot.Provider.MySql
         private readonly string _sqlQueryBySection;
         private readonly string _sqlInsert;
         private readonly string _sqlQueryAllConfig;
+        private bool _isCalledOnce = false;
         public OcelotConfigDbDal(OcelotConfigDbConfiguration configDbConfiguration)
         {
             _dbConnectionString = configDbConfiguration.ConnectionString;
@@ -48,11 +49,15 @@ namespace Ocelot.Provider.MySql
             await conn.ExecuteAsync(_sqlInsert, ocelotConfig);
         }
 
-        public async Task<int> Update(OcelotConfiguration ocelotConfig)
+        public async Task Update(OcelotConfiguration ocelotConfig)
         {
-            ocelotConfig.LastUpdate = DateTime.Now;
-            using IDbConnection connection = new MySqlConnection(_dbConnectionString);
-            return await connection.ExecuteAsync(_sqlUpdate, ocelotConfig);
+            if (_isCalledOnce)
+            {
+                ocelotConfig.LastUpdate = DateTime.Now;
+                using IDbConnection connection = new MySqlConnection(_dbConnectionString);
+                await connection.ExecuteAsync(_sqlUpdate, ocelotConfig);
+            }
+            _isCalledOnce = true;
         }
     }
 }
