@@ -1,6 +1,9 @@
 [English](README.md)  | Release Notes
 # Package Update
 ## v1.2.0
+- Fixed Table name issue (using camelCase)
+
+## v1.2.0
 - Fixed Issues
 
 ## v1.1.0
