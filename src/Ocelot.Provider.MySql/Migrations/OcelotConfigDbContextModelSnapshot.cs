@@ -49,7 +49,7 @@ namespace Ocelot.Provider.MySql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ConfigModels");
+                    b.ToTable("configmodels");
 
                     b.HasData(
                         new

@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.Data.EntityFrameworkCore.Metadata;
+using System;
 
 namespace Ocelot.Provider.MySql.Migrations
 {
@@ -9,7 +9,7 @@ namespace Ocelot.Provider.MySql.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ConfigModels",
+                name: "configmodels",
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
@@ -21,11 +21,11 @@ namespace Ocelot.Provider.MySql.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ConfigModels", x => x.id);
+                    table.PrimaryKey("PK_configmodels", x => x.id);
                 });
 
             migrationBuilder.InsertData(
-                table: "ConfigModels",
+                table: "configmodels",
                 columns: new[] { "id", "createTime", "lastUpdate", "payload", "section" },
                 values: new object[] { 1, new DateTime(2020, 6, 30, 15, 42, 0, 233, DateTimeKind.Local).AddTicks(1038), new DateTime(2020, 6, 30, 15, 42, 0, 233, DateTimeKind.Local).AddTicks(1046), "{   \"routes\":[   ],   \"dynamicRoutes\":[   ],   \"aggregates\":[   ],   \"globalConfiguration\":{      \"requestIdKey\":\"OcRequestId\",      \"serviceDiscoveryProvider\":{         \"scheme\":null,         \"host\":null,         \"port\":0,         \"type\":null,         \"token\":null,         \"configurationKey\":null,         \"pollingInterval\":0,         \"namespace\":null      },      \"rateLimitOptions\":{         \"clientIdHeader\":\"ClientId\",         \"quotaExceededMessage\":null,         \"rateLimitCounterPrefix\":\"ocelot\",         \"disableRateLimitHeaders\":false,         \"httpStatusCode\":429      },      \"qoSOptions\":{         \"exceptionsAllowedBeforeBreaking\":0,         \"durationOfBreak\":0,         \"timeoutValue\":0      },      \"baseUrl\":\"https://localhost:5001\",      \"loadBalancerOptions\":{         \"type\":null,         \"key\":null,         \"expiry\":0      },      \"downstreamScheme\":null,      \"httpHandlerOptions\":{         \"allowAutoRedirect\":false,         \"useCookieContainer\":false,         \"useTracing\":false,         \"useProxy\":true,         \"maxConnectionsPerServer\":2147483647      },      \"downstreamHttpVersion\":null   }}", "Ocelot" });
         }
@@ -33,7 +33,7 @@ namespace Ocelot.Provider.MySql.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ConfigModels");
+                name: "configmodels");
         }
     }
 }

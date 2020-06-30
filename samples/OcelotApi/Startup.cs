@@ -1,16 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Ocelot.Administration;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
@@ -30,11 +23,11 @@ namespace OcelotApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString =Configuration["OcelotMySQL:ConnectionString"];
-            services.AddDbContext<OcelotConfigDbContext>(x=>x.UseMySQL(connectionString));
+            var connectionString = Configuration["OcelotMySQL:ConnectionString"];
+            services.AddDbContext<OcelotConfigDbContext>(x => x.UseMySQL(connectionString));
             services
               .AddOcelot(Configuration)
-              .AddConfigStoredInMySql(x=>x.ConnectionString = connectionString)
+              .AddConfigStoredInMySql(x => x.ConnectionString = connectionString)
               .AddAdministration("/administration", "secret");
             services.AddControllers();
         }
@@ -51,7 +44,7 @@ namespace OcelotApi
 
             app.UseRouting();
             app.UseAuthorization();
-            app.UseEndpoints(x=>x.MapControllers());
+            app.UseEndpoints(x => x.MapControllers());
             app.UseOcelot().Wait();
         }
     }

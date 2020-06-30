@@ -62,7 +62,7 @@
                 var ocelotCfg = await _configDbDal.GetOcelotConfigBySection(OcelotConfigurationSection.All);
                 if (ocelotCfg == null)
                 {
-                    await _configDbDal.InsertRequestLogs(new OcelotConfiguration{ Payload = cfgPayload, Section = OcelotConfigurationSection.All });
+                    await _configDbDal.InsertRequestLogs(new OcelotConfiguration { Payload = cfgPayload, Section = OcelotConfigurationSection.All });
                 }
                 else
                 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ocelot.Provider.MySql
+﻿namespace Ocelot.Provider.MySql
 {
     public class OcelotConfigDbConfiguration
     {

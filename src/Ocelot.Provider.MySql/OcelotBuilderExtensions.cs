@@ -3,11 +3,9 @@ namespace Ocelot.Provider.MySql
 {
     using Configuration.Repository;
     using DependencyInjection;
-    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
     using Ocelot.Cache;
     using Ocelot.Configuration.File;
-    using Ocelot.Configuration.Setter;
     using System;
 
     public static class OcelotBuilderExtensions
