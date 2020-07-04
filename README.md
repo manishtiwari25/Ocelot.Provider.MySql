@@ -11,7 +11,7 @@ Windows (AppVeyor)
 
 
 
-This package adds Microsoft SQL Server support to Ocelot configuration.
+This package adds MySql support to Ocelot configuration.
 
 ## How to install
 
